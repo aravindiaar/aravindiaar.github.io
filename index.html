@@ -21,6 +21,7 @@ data();
 }
 
 var dataPointsValues=[];
+var RenderChartTitle="";
 function data()
 {
 
@@ -35,6 +36,7 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
+  
   var appendrowshtml="";
   var rowno=1;
     $.each(response, function (key, val) {
@@ -71,9 +73,9 @@ function renderchart()
 			fontSize: 22 
 		}, 
 		axisY: { 
-			title: "Prices in USD/gal", 
+			title: "Profit and Loss in ₹", 
 			includeZero: false, 
-			Prefix: "$" 
+			Prefix: "₹" 
 		}, 
 		axisX: { 
 			interval: 2, 
@@ -84,7 +86,7 @@ function renderchart()
 		data: [ 
 		{ 
 			type: "spline",
-			toolTipContent: "{x}: {y} USD/gal",
+			toolTipContent: "{x}:₹ {y} ",
 			dataPoints: dataPointsValues
 		} 
 		] 
@@ -110,10 +112,10 @@ function renderchart()
  
         <tfoot>
             <tr>
-                    <th>Day</th>
-                <th>Date</th>
-                <th>PnL</th>
-                <th>Cumulative PnL</th>
+                    <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </tfoot>
  
