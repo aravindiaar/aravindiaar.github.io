@@ -463,6 +463,14 @@ var RenderChartTitle="";
 function data()
 {
 
+var Normal = {
+  "url":"https://raw.githubusercontent.com/aravindiaar/aravindiaar.github.io/main/Data.json",
+  "method": "GET",
+  "timeout": 0,
+};
+$.ajax(Normal).done(function (response) {
+  console.log(response)
+  ));
 
 var CummPnL=0;
 
